@@ -6,26 +6,111 @@
   <title>Inked Tattoo Convention</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
-  <meta name="theme-color" content="#fafafa">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
 </head>
 
 <body>
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
+  <nav class="pa3 ph4-ns flex flex-row-l flex-column items-center justify-between w-100">
+    <a href="/">
+     <img src="./img/logo.png" class="mw4 h-auto w-100" alt="Inked Tattoo Convention"/>
+    </a>
+    <ul class="flex flex-row-l flex-column justify-between w-70 mw7 pv0-l pv4">
+      <li class="pv0-l pv2">
+        <a class="white ttu" href="about.html"/>
+          About
+        </a>
+      </li>
+      <li class="pv0-l pv2">
+        <a class="white ttu" href="artists.html"/>
+          Artists
+        </a>
+      </li>
+      <li class="pv0-l pv2">
+        <a class="white ttu" href="vendors.html"/>
+          Vendors
+        </a>
+      </li>
+      <li class="pv0-l pv2">
+        <a href="sponsors.html" class="white ttu"/>
+          Sponsors
+        </a>
+      </li>
+      <li class="pv0-l pv2">
+        <a href="tattoo.html" class="white ttu"/>
+          Tattoo
+        </a>
+      </li>
+      <li class="pv0-l pv2">
+        <a href="show-info.html" class="white ttu"/>
+          Show info
+        </a>
+      </li>
+      <li class="pv0-l pv2">
+        <a href="contact.html" class="white ttu"/>
+          Contact
+        </a>
+      </li>
 
+    </ul>
+  </nav>
+  <main>
+    <section class="hero-img-bg vh-90 flex flex-row justify-end-l  items-end-l justify-center items-center pv4 ph5">
+      <div class="flex flex-column bg-black pa3 ph4 mw25rem">
+        <h1 class="red underlined ttu tracked f2 ma0">Welcome to Inked Tattoo convention</h1>
+        <p>The 20th annual Inked (formerly Tatcon) tattoo convention will take place on October 25th-27th in Vancouver Convention Centre. </p>
+        <p>We have world renowned entertainment and are welcoming new artists and hosting new seminars with even more vendors than ever before! We hope you join us for the biggest and best show yet!</p>
+        <button class="cta w-100 mt4">
+          <span class="cta ttu ph4 pv3">Buy tickets now</span>
+        </button>
+      </div>
+    </section>
+    <section class="min-h-70vh flex flex-column items-center justify-start pv5-l pv4-m pv3">
+      <h2 class="ttu tracked">
+        Our artists
+      </h2>
+    </section>
+    <section class="min-h-70vh flex flex-column items-center justify-start pv5-l pv4-m pv3">
+      <h2 class="ttu tracked">
+        Vendors
+      </h2>
+    </section>
+    <section>
+      <h2 class="ttu tracked flex flex-column items-center justify-start pv5-l pv4-m pv3">
+        Sponsors
+      </h2>
+    </section>
+  </main>
+  <footer class="pa3 pa4-ns flex flex-column">
+    <div class="w-100 h-auto">
+      <img src="./img/logo.png"/>
+    </div>
+    <div class="flex flex-row-l flex-column">
+      <div class="w-50-l w-100">
+        <h4 class="ttu tracked fw6">Inked Tattoo convention</h4>
+        <p class="tracked fw3">Vancouver Convention Center</p>
+        <p class="tracked fw3">October 25 - 27th</p>
+        <form class="flex flex-row" id="subscriptionForm">
+          <input id="subscriptionEmail" name="email" placeholder="Your address@email.com" />
+          <input type="submit" value="subscribe" />
+        </form>
+      </div>
+      <div class="w-50-l w-100">
+      </div>
+    </div>
+  </footer>
   <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 
 </body>
