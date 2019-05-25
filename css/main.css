@@ -39,17 +39,34 @@ Author's custom styles
 body {
   font-family: 'Open Sans', 'Helvetica', 'Avenir', sans-serif;
   background-color: #000000;
-  color: #ffffff; }
+  color: #ffffff;
+  box-sizing: border-box; }
 
 nav ul {
   list-style: none; }
 
-nav ul li a {
-  text-decoration: none;
-  padding: 3px;
+nav ul li {
   position: relative; }
 
-nav ul li a:before {
+nav ul li a, footer a {
+  text-decoration: none;
+  padding: 3px;
+  position: relative;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-tracking: 0.2em; }
+
+footer a {
+  font-weight: 300;
+  padding: 0; }
+
+h4 {
+  text-transform: uppercase;
+  letter-tracking: 0.2em;
+  font-weight: 600;
+  margin: 0; }
+
+nav ul li a:before, footer a:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -61,16 +78,107 @@ nav ul li a:before {
   transform: scaleX(0);
   transition: transform 0.5s ease; }
 
-nav ul li a:hover:before {
+nav ul li a:hover:before, footer a:hover:before, nav ul li a:focus:before, footer a:focus:before, nav ul li a.active {
   transform-origin: bottom left;
   transform: scaleX(1); }
 
 p {
   margin: 1rem 0 0 0; }
 
+input#subscriptionEmail {
+  box-sizing: border-box;
+  line-height: 3em;
+  height: 3em;
+  border: 1px solid #ffffff;
+  padding: 0 1em;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: none;
+  box-shadow: none; }
+
+#subscriptionForm input[type=submit] {
+  box-sizing: border-box;
+  background-color: #000000;
+  color: #ffffff;
+  line-height: 3em;
+  height: 3em;
+  padding: 0 1em;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase; }
+
+@media (min-width: 30em) {
+  input#subscriptionEmail {
+    min-width: 20em; } }
+@media (max-width: 30em) {
+  input#subscriptionEmail {
+    width: 100%;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border-bottom-left-radius: 0em; }
+
+  #subscriptionForm input[type=submit] {
+    width: 100%;
+    border-top-right-radius: 0em;
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em; } }
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #371113;
+  letter-spacing: 0.2em;
+  text-transform: uppercase; }
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #371113;
+  letter-spacing: 0.2em;
+  text-transform: uppercase; }
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #371113;
+  letter-spacing: 0.2em;
+  text-transform: uppercase; }
+
 /* ==========================================================================
 Helper classes
 ========================================================================== */
+@media (min-width: 60em) {
+  .dropdown {
+    background: #371113;
+    height: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    transition: all .5s ease;
+    top: 35px;
+    width: 100%;
+    margin: 0;
+    padding: 1rem; }
+
+  .dropdown a {
+    width: auto; } }
+@media (max-width: 60em) {
+  .dropdown {
+    height: auto;
+    opacity: 1;
+    position: relative;
+    transition: height .5s ease, opacity .5s ease;
+    width: 100%;
+    margin: 0;
+    padding: 1rem; }
+
+  .dropdown a {
+    width: auto; } }
+.showDropdown {
+  height: auto;
+  width: auto;
+  opacity: 1;
+  transform: translateY(0); }
+
 .mw25rem {
   max-width: 25rem; }
 
@@ -167,6 +275,9 @@ button.cta:hover span.cta-text::before, button.cta:hover span.cta-text::after {
 .cta:hover span.cta-text::before, .cta:hover span.cta-text::after {
   transition-delay: 0s; }
 
+.tracked {
+  letter-spacing: 0.2em; }
+
 /*
  * Hide visually and from screen readers
  */
@@ -174,13 +285,13 @@ button.cta:hover span.cta-text::before, button.cta:hover span.cta-text::after {
   display: none !important; }
 
 /*
-* Hide only visually, but have it available for screen readers:
-* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-*
-* 1. For long content, line feeds are not interpreted as spaces and small width
-*    causes content to wrap 1 word per line:
-*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
-*/
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -194,10 +305,10 @@ button.cta:hover span.cta-text::before, button.cta:hover span.cta-text::after {
   /* 1 */ }
 
 /*
-* Extends the .visuallyhidden class to allow the element
-* to be focusable when navigated to via the keyboard:
-* https://www.drupal.org/node/897638
-*/
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -209,102 +320,9 @@ button.cta:hover span.cta-text::before, button.cta:hover span.cta-text::after {
   white-space: inherit; }
 
 /*
-* Hide visually and from screen readers, but maintain layout
-*/
+ * Hide visually and from screen readers, but maintain layout
+ */
 .invisible {
   visibility: hidden; }
-
-/*
-* Clearfix: contain floats
-*
-* For modern browsers
-* 1. The space content is one way to avoid an Opera bug when the
-*    `contenteditable` attribute is included anywhere else in the document.
-*    Otherwise it causes space to appear at the top and bottom of elements
-*    that receive the `clearfix` class.
-* 2. The use of `table` rather than `block` is only necessary if using
-*    `:before` to contain the top-margins of child elements.
-*/
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */ }
-
-.clearfix:after {
-  clear: both; }
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */ }
-@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */ }
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-@media print {
-  *,
-  *:before,
-  *:after {
-    background: transparent !important;
-    color: #000 !important;
-    /* Black prints faster */
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    text-shadow: none !important; }
-
-  a,
-  a:visited {
-    text-decoration: underline; }
-
-  a[href]:after {
-    content: " (" attr(href) ")"; }
-
-  abbr[title]:after {
-    content: " (" attr(title) ")"; }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: ""; }
-
-  pre {
-    white-space: pre-wrap !important; }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid; }
-
-  /*
-   * Printing Tables:
-   * http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
-  thead {
-    display: table-header-group; }
-
-  tr,
-  img {
-    page-break-inside: avoid; }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3; }
-
-  h2,
-  h3 {
-    page-break-after: avoid; } }
 
 /*# sourceMappingURL=main.css.map */
