@@ -19,7 +19,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <link rel="stylesheet" type="text/css" href="./slick/slick.css"/>
@@ -32,7 +31,6 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
-  <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <script>
     const lists = ['sponsors', 'vendors', 'artists', 'about'];
@@ -55,6 +53,19 @@
         dropdown.classList.add('showDropdown');
       }
     }
+    const toggleMenu = () => {
+      const menu = document.getElementById('menu');
+      const menuButton = document.getElementById('menu-button');
+      if (menu.classList.contains('hide')) {
+        menu.classList.remove('hide');
+        menu.classList.add('flex');
+        menuButton.innerHTML = 'close';
+      } else {
+        menu.classList.remove('flex');
+        menu.classList.add('hide');
+        menuButton.innerHTML = 'menu';
+      }
+    }
   </script>
 </head>
 
@@ -62,11 +73,14 @@
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
-  <nav class="pa3 ph4-ns flex flex-row-l flex-column items-center justify-between w-100">
-    <a href="/">
+  <nav class="pa3 ph4-m ph5-l flex flex-row-l flex-column items-center justify-between w-100">
+    <a href="index.htmlndex.html">
      <img src="./img/logo.png" class="mw3 h-auto w-100" alt="Inked Tattoo Convention"/>
     </a>
-    <ul class="flex flex-row-l flex-column justify-between w-70 w-100 mw7-ns pv0-l pv4">
+    <span class='dn-l dib' id="menu-button" onClick="toggleMenu()">
+      Menu
+    </span>
+    <ul id="menu" class="flex-l hide flex-row-l flex-column justify-between w-70 w-100 mw7-l mw5 center pv0-l pv4">
       <li class="pv0-l pv2">
         <a id="about" onClick="toggleDropdown('about')" class="white ttu"/>
           About
@@ -137,35 +151,35 @@
         Our artists
       </h2>
       <div class="artists-carousel w-100">
-        <div class="overflow-hidden" style="height: 500px;">
-          <img src="./img/artists/2.jpg" class="w-100 mw7 h-auto center"/>
+        <div class="overflow-hidden" style="height: 75vh;object-fit:contain;">
+          <img src="./img/artists/tat2.jpg" class="w-100 mw8 h-auto center"/>
         </div>
-        <div class="overflow-hidden" style="height: 500px;">
-          <img src="./img/artists/3.jpg" class="w-100 mw7 h-auto center"/>
+        <div class="overflow-hidden" style="height: 75vh;object-fit:contain;">
+          <img src="./img/artists/tat3.jpg" class="w-100 mw8 h-auto center"/>
         </div>
-        <div class="overflow-hidden" style="height: 500px;">
-          <img src="./img/artists/4.jpg" class="w-100 mw7 h-auto center"/>
+        <div class="overflow-hidden" style="height: 75vh;object-fit:contain;">
+          <img src="./img/artists/tat4.jpg" class="w-100 mw8 h-auto center"/>
         </div>
-        <div class="overflow-hidden" style="height: 500px;">
-          <img src="./img/artists/5.jpg" class="w-100 mw7 h-auto center"/>
+        <div class="overflow-hidden" style="height: 75vh;object-fit:contain;">
+          <img src="./img/artists/tat5.jpg" class="w-100 mw8 h-auto center"/>
         </div>
-        <div class="overflow-hidden" style="height: 500px;">
-          <img src="./img/artists/6.jpg" class="w-100 mw7 h-auto center"/>
+        <div class="overflow-hidden" style="height: 75vh;object-fit:contain;">
+          <img src="./img/artists/tat6.jpg" class="w-100 mw8 h-auto center"/>
         </div>
-        <div class="overflow-hidden" style="height: 500px;">
-          <img src="./img/artists/7.jpg" class="w-100 mw7 h-auto center"/>
+        <div class="overflow-hidden" style="height: 75vh;object-fit:contain;">
+          <img src="./img/artists/tat7.jpg" class="w-100 mw8 h-auto center"/>
         </div>
-        <div class="overflow-hidden" style="height: 500px;">
-          <img src="./img/artists/8.jpg" class="w-100 mw7 h-auto center"/>
+        <div class="overflow-hidden" style="height: 75vh;object-fit:contain;">
+          <img src="./img/artists/tat8.jpg" class="w-100 mw8 h-auto center"/>
         </div>
-        <div class="overflow-hidden" style="height: 500px;">
-          <img src="./img/artists/9.jpg" class="w-100 mw7 h-auto center"/>
+        <div class="overflow-hidden" style="height: 75vh;object-fit:contain;">
+          <img src="./img/artists/tat9.jpg" class="w-100 mw8 h-auto center"/>
         </div>
-        <div class="overflow-hidden" style="height: 500px;">
-          <img src="./img/artists/10.jpg" class="w-100 mw7 h-auto center"/>
+        <div class="overflow-hidden" style="height: 75vh;object-fit:contain;">
+          <img src="./img/artists/tat10.jpg" class="w-100 mw8 h-auto center"/>
         </div>
-        <div class="overflow-hidden" style="height: 500px;">
-          <img src="./img/artists/11.jpg" class="w-100 mw7 h-auto center"/>
+        <div class="overflow-hidden" style="height: 75vh;object-fit:contain;">
+          <img src="./img/artists/tat1.jpg" class="w-100 mw8 h-auto center"/>
         </div>
       </div>
       <button class="cta w-100-ns mt4 mw5">
@@ -177,9 +191,9 @@
         Vendors
       </h2>
       <div class="flex flex-row-ns flex-wrap-m flex-column w-100 mw7 center justify-between items-start">
-        <img src="./img/vendors/alt-art-cross-roads.jpg" class="w-100 mw4 h-auto" alt="Cross Roads Alternate Art"/>
-        <img src="./img/vendors/guns-pedals.jpg" class="w-100 mw4 h-auto" alt="Mjolnir Guns and Pedals"/>
-        <img src="./img/vendors/black-blue-ink.jpg" class="w-100 mw4 h-auto" alt="Black & Blue Ink Inc."/>
+        <img src="./img/vendors/alt-art-cross-roads.png" class="w-100 mw4 h-auto" alt="Cross Roads Alternate Art"/>
+        <img src="./img/vendors/guns-pedals.png" class="w-100 mw4 h-auto" alt="Mjolnir Guns and Pedals"/>
+        <img src="./img/vendors/black-blue-ink.png" class="w-100 mw4 h-auto" alt="Black & Blue Ink Inc."/>
         <img src="./img/vendors/skin-art-mag.png" class="w-100 mw4 h-auto" alt="Skin Art Magazine"/>
       </div>
       <button class="cta w-100-ns mt4 mw5">
@@ -191,8 +205,8 @@
         Sponsors
       </h2>
       <div class="flex flex-row-ns flex-wrap-m flex-column w-100 mw7 center justify-between items-start">
-        <img src="./img/vendors/guns-pedals.jpg" class="w-100 mw4 h-auto" alt="Mjolnir Guns and Pedals"/>
-        <img src="./img/vendors/black-blue-ink.jpg" class="w-100 mw4 h-auto" alt="Black & Blue Ink Inc."/>
+        <img src="./img/vendors/guns-pedals.png" class="w-100 mw4 h-auto" alt="Mjolnir Guns and Pedals"/>
+        <img src="./img/vendors/black-blue-ink.png" class="w-100 mw4 h-auto" alt="Black & Blue Ink Inc."/>
         <img src="./img/vendors/skin-art-mag.png" class="w-100 mw4 h-auto" alt="Skin Art Magazine"/>
       </div>
       <button class="cta w-100-ns mt4 mw5">
@@ -200,7 +214,7 @@
       </button>
     </section>
   </main>
-  <footer class="pa3 pa4-ns flex flex-column w-100">
+  <footer class="pa3 pa4-m pa5-l flex flex-column w-100">
     <div class="w-100 h-auto">
       <img src="./img/logo.png"/ class="w-100 h-auto mw4">
     </div>

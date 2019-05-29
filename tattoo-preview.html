@@ -1,0 +1,316 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Tattoo Preview ● Inked Tattoo Convention</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <link rel="stylesheet" type="text/css" href="./slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"/>
+
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link rel="apple-touch-icon" href="icon.png">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    const lists = ['sponsors', 'vendors', 'artists', 'about'];
+    const closeDropdowns = () => {
+      for (let i = 0; i < lists.length; i++) {
+        document.getElementById(lists[i]+'Dropdown').classList.remove('showDropdown');
+      }
+    }
+
+    const toggleDropdown = (groupName) => {
+      const dropdown = document.getElementById(groupName+'Dropdown');
+      if (dropdown.classList.contains('showDropdown')) {
+        dropdown.classList.remove('showDropdown');
+      } else {
+        for (let i = 0; i < lists.length; i++) {
+          if (lists[i] !== groupName) {
+            document.getElementById(lists[i]+'Dropdown').classList.remove('showDropdown');
+          }
+        }
+        dropdown.classList.add('showDropdown');
+      }
+    }
+    const toggleMenu = () => {
+      const menu = document.getElementById('menu');
+      const menuButton = document.getElementById('menu-button');
+      if (menu.classList.contains('hide')) {
+        menu.classList.remove('hide');
+        menu.classList.add('flex');
+        menuButton.innerHTML = 'close';
+      } else {
+        menu.classList.remove('flex');
+        menu.classList.add('hide');
+        menuButton.innerHTML = 'menu';
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+  <nav class="hero-img-bg-2 vh-50-l pa3 ph4-m ph5-l flex flex-row-l flex-column items-start-l items-center justify-between w-100 pt5-l">
+    <a href="index.html">
+     <img src="./img/logo.png" class="mw3 h-auto w-100" alt="Inked Tattoo Convention"/>
+    </a>
+    <span class='dn-l dib' id="menu-button" onClick="toggleMenu()">
+      Menu
+    </span>
+    <ul id="menu" class="flex-l hide flex-row-l flex-column justify-between w-70 w-100 mw7-l mw5 center pv0-l pv4">
+      <li class="pv0-l pv2">
+        <a id="about" onClick="toggleDropdown('about')" class="white ttu"/>
+          About
+        </a>
+        <ul id="aboutDropdown" class="dropdown flex flex-column items-start h-auto mw5 mb4 w-100-l mw5 ">
+          <a href="history.html">History</a>
+          <a class="mt3" href="dates-venue.html">Dates & Venue</a>
+        </ul>
+      </li>
+      <li class="pv0-l pv2">
+        <a class="white ttu" id="artists" onClick="toggleDropdown('artists')"/>
+          Artists
+          <ul id="artistsDropdown" class="dropdown flex flex-column items-start h-auto mw5 mb4 w-100-l mw5 ">
+            <a href="featured-artists.html">Featured artists</a>
+            <a class="mt3" href="book-artist.html">Book an artist</a>
+          </ul>
+        </a>
+      </li>
+      <li class="pv0-l pv2">
+        <a class="white ttu" id="vendors" onClick="toggleDropdown('vendors')"/>
+          Vendors
+        </a>
+        <ul id="vendorsDropdown" class="dropdown flex flex-column items-start h-auto mw5 mb4 w-100-l mw5 ">
+          <a href="shops-list.html">Shops list</a>
+          <a class="mt3" href="book-booth.html">Book a booth</a>
+        </ul>
+      </li>
+      <li class="pv0-l pv2">
+        <a class="white ttu" id="sponsors" onClick="toggleDropdown('sponsors')"/>
+          Sponsors
+        </a>
+        <ul id="sponsorsDropdown" class="dropdown flex flex-column items-start h-auto mw5 mb4 w-100-l mw5 ">
+          <a href="sponsor-packages.html">Sponsor info</a>
+          <a class="mt3" href="become-sponsor.html">Become a sponsor</a>
+        </ul>
+      </li>
+      <li class="pv0-l pv2">
+        <a href="tattoo-preview.html" class="white ttu"/>
+          Tattoo
+        </a>
+      </li>
+      <li class="pv0-l pv2">
+        <a href="show-info.html" class="white ttu"/>
+          Show info
+        </a>
+      </li>
+      <li class="pv0-l pv2">
+        <a href="contact.html" class="white ttu"/>
+          Contact
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+  <main id="main" onclick="closeDropdowns()">
+    <script>
+      const updateBodyPart = (elem, src) => {
+        document.getElementById('display-body-part').innerHTML="<img src='./img/tattoo/"+src+".jpg' id='display-body-part-img'/>";
+        const activeThumbs=document.getElementsByClassName('thumb-active');
+        for (let i=0; i< activeThumbs.length; i++) {
+          activeThumbs[i].classList.remove("thumb-active");
+        }
+        elem.classList.add('thumb-active');
+
+      }
+    </script>
+    <section class="pt4">
+      <h1 class="tc ttu tracked f3">Try a design</h1>
+      <div class="bg-tattoo-gray h-auto ma3-ns flex flex-row min-vh-30-l pa4">
+        <div class="flex flex-column mw5 w-100 h-100">
+          <h3 class="ttu tracked ma0">Body part</h3>
+          <a class="body-part-thumb mb3 pointer" title="back" onclick="updateBodyPart(this, 'back')">
+          <img src="./img/tattoo/back.jpg" alt="thumbnail of back"/>
+          </a>
+          <a class="body-part-thumb mb3" title="hands" onclick="updateBodyPart(this, 'hands')">
+          <img src="./img/tattoo/hands.jpg" alt="thumbnail of hands"/>
+          </a>
+          <a class="body-part-thumb mb3" title="foot" onclick="updateBodyPart(this, 'foot')">
+          <img src="./img/tattoo/foot.jpg" alt="thumbnail of foot"/>
+          </a>
+          <a class="body-part-thumb mb3" title="leg" onclick="updateBodyPart(this, 'leg')">
+          <img src="./img/tattoo/leg.jpg" alt="thumbnail of leg"/>
+          </a>
+        </div>
+        <div class="flex flex-column w-100 h-100 items-center justify-center">
+          <label class="ttu tracked white w-50">
+            Change tatoos size
+            <input type="range" min="50" max="500" step="10" onChange="changeImagesSize(this)" class='w-100'/>
+          </label>
+          <div class="h-100 w-100 items-center flex flex-column" id="display-body-part">
+          <img src="./img/tattoo/back.jpg"/ id="display-body-part-img">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="pt4 flex flex-column items-center">
+      <h2 class="ttu tracked f3 tc">Artist work samples</h2>
+      <div class="w-100 bg-light-silver mh3 mw8 center flex flex-row justify-around sample-tattoos flex-wrap">
+        <img src="./img/tattoo/tattoo1.png" class="draggable" id="tattoo1"/>
+        <img src="./img/tattoo/tattoo2.png" class="draggable" id="tattoo2"/>
+        <img src="./img/tattoo/tattoo3.png" class="draggable" id="tattoo3"/>
+        <img src="./img/tattoo/tattoo4.png" class="draggable" id="tattoo4"/>
+        <img src="./img/tattoo/tattoo5.png" class="draggable" id="tattoo5"/>
+      </div>
+      <script>
+      </script>
+      <p class="tc">or</p>
+
+      <button class="cta w-100-ns mt4 mw6">
+        <label class="cta-text ttu f3 ph4 pv3" for="the-file-input">
+        Upload your own design
+      <input id="the-file-input" name="the-file-input" type="file">
+        <img src="./img/tattoo/upload.svg" class="w2 h-auto pl3 dib" style="margin-bottom: -5px;"/>
+        </label>
+      </button>
+
+          <div id="uploaded-image-container" class="ma4 center"></div>
+    </section>
+  </main>
+  <footer class="pa3 pa4-m pa5-l flex flex-column w-100">
+    <div class="w-100 h-auto">
+      <img src="./img/logo.png"/ class="w-100 h-auto mw4">
+    </div>
+    <div class="flex flex-row-l flex-column w-100">
+      <div class="w-50-l w-100">
+        <h4 class="ttu tracked fw6">Inked Tattoo convention</h4>
+        <p class="tracked fw3">Vancouver Convention Center</p>
+        <p class="tracked fw3">October 25 - 27th</p>
+        <form class="flex flex-row-ns flex-column tracked ttu mt4 w-100" id="subscriptionForm">
+          <input id="subscriptionEmail" name="email" size=10 placeholder="Your address@email.com" class="f5"/>
+          <input type="submit" value="subscribe" class="f5"/>
+        </form>
+      </div>
+      <div class="w-50-l w-100 flex flex-row-ns flex-wrap justify-end-l mt0-l mt5-m mt4">
+        <div class="flex flex-column items-start w-25-l w-50-m w-100 mb4 pr2">
+          <h4>About</h4>
+          <a class="mt3" href="history.html">History</a>
+          <a class="mt3" href="dates-venue.html">Dates & Venue</a>
+        </div>
+        <div class="flex flex-column items-start w-25-l w-50-m w-100 mb4 pr2">
+          <h4>Artists</h4>
+          <a class="mt3" href="featured-artists.html">Featured artists</a>
+          <a class="mt3" href="book-artist.html">Book an artist</a>
+        </div>
+        <div class="flex flex-column items-start w-25-l w-50-m w-100 mb4 pr2">
+          <h4>Tattoo Preview</h4>
+          <a class="mt3" href="tattoo-preview.html">Upload design</a>
+        </div>
+        <div class="flex flex-column items-start w-25-l w-50-m w-100 mb4 pr2">
+          <h4>Contact</h4>
+          <a class="mt3" href="contact.html">Contact us</a>
+        </div>
+        <div class="flex flex-column items-start w-25-l w-50-m w-100 mb4 pr2">
+          <h4>Vendors</h4>
+          <a class="mt3" href="shops-list.html">Shops list</a>
+          <a class="mt3" href="book-booth.html">Book a booth</a>
+        </div>
+        <div class="flex flex-column items-start w-25-l w-50-m w-100 mb4 pr2">
+          <h4>Sponsors</h4>
+          <a class="mt3" href="sponsor-packages.html">Sponsor info</a>
+          <a class="mt3" href="become-sponsor.html">Become a sponsor</a>
+        </div>
+        <div class="flex flex-column items-start w-25-l w-50-m w-100 mb4 pr2">
+          <h4>Home</h4>
+          <a href="index.html" class="mt3">Homepage</a>
+        </div>
+      </div>
+    </div>
+    <div class="w-100 h-auto ttu f7 fw3 tc">
+      &copy; 2019 Inked Tattoo Convention
+    </div>
+  </footer>
+  <!-- Add your site or application content here -->
+  <script src="js/main.js"></script>
+  <script type="text/javascript" src="./slick/slick.min.js"></script>
+
+
+  <script type="text/javascript">
+    $( function() {
+      $('.draggable').draggable();
+      $('#display-body-part').droppable();
+    });
+const changeImagesSize = (elem) => {
+  console.log(elem.value);
+  $('.draggable').css({"width":elem.value+'px'});
+  $('.draggable').css({"height":elem.value+'px'});
+}
+$(document).ready(function(){
+  $('.tattoo-carousel').slick({
+    infinite: true,
+    dots: true,
+    arrows: true,
+    slidesToShow: 4,
+    slidesToScroll:1,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    swipe: true,
+    speed: 300
+  });
+  $("#the-file-input").change(function() {
+    // will log a FileList object, view gifs below
+  });
+  // render the image in our view
+  function renderImage(file) {
+
+    // generate a new FileReader object
+    var reader = new FileReader();
+
+    // inject an image with the src url
+    reader.onload = function(event) {
+      the_url = event.target.result
+      $('#uploaded-image-container').html("<img src='" + the_url + "' class='draggable' />")
+      $('.draggable').draggable();
+    }
+
+    // when the file is read it triggers the onload event above.
+    reader.readAsDataURL(file);
+  }
+  // handle input changes
+  $("#the-file-input").change(function() {
+
+    // grab the first image in the FileList object and pass it to the function
+    renderImage(this.files[0])
+  });
+});
+  </script>
+
+</body>
+
+</html>

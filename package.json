@@ -1,0 +1,22 @@
+{
+  "name": "inked_website",
+  "version": "1.0.0",
+  "description": "tattoo convention website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/korshunad/inked_website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/korshunad/inked_website/issues"
+  },
+  "homepage": "https://github.com/korshunad/inked_website#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
