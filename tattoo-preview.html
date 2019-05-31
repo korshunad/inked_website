@@ -35,6 +35,8 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script defer src="./js/jquery.ui.touch-punch.min.js"></script>
+
   <script>
     const lists = ['sponsors', 'vendors', 'artists', 'about'];
     const closeDropdowns = () => {
@@ -152,9 +154,9 @@
     </script>
     <section class="pt4">
       <h1 class="tc ttu tracked f3">Try a design</h1>
-      <div class="bg-tattoo-gray h-auto ma3-ns flex flex-row min-vh-30-l pa4">
-        <div class="flex flex-column mw5 w-100 h-100">
-          <h3 class="ttu tracked ma0">Body part</h3>
+      <div class="bg-tattoo-gray h-auto ma3-ns flex flex-row-l flex-column min-vh-30-l pa4">
+        <div class="flex flex-column-l flex-row flex-wrap mw5-l w-100 h-100 justify-start-l items-start-l justify-center items-center">
+          <h3 class="ttu tracked ma0 w-auto-l w-100 tc">Body part</h3>
           <a class="body-part-thumb mb3 pointer" title="back" onclick="updateBodyPart(this, 'back')">
           <img src="./img/tattoo/back.jpg" alt="thumbnail of back"/>
           </a>
@@ -169,7 +171,7 @@
           </a>
         </div>
         <div class="flex flex-column w-100 h-100 items-center justify-center">
-          <label class="ttu tracked white w-50">
+          <label class="ttu tracked white w-50-ns w-100 tc">
             Change tatoos size
             <input type="range" min="50" max="500" step="10" onChange="changeImagesSize(this)" class='w-100'/>
           </label>

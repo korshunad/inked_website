@@ -167,6 +167,7 @@ a.body-part-thumb:hover, a.body-part-thumb:focus, a.body-part-thumb.thumb-active
   border: 1px solid #f6b243;
 
 }
+@media and (min-width: 60em) {
 #display-body-part-img {
   height: 500px;
   width: auto;
@@ -175,6 +176,18 @@ a.body-part-thumb:hover, a.body-part-thumb:focus, a.body-part-thumb.thumb-active
   -moz-animation:    fade-in 2s; /* Fx 5+ */
   -o-animation:      fade-in 2s; /* Opera 12+ */
   animation:         fade-in 2s; /* IE 10+, Fx 29+ */V
+}
+}
+@media and (max-width: 60em) {
+#display-body-part-img {
+  height: 100%;
+  width: auto;
+  transition: all 3s ease-in-out;
+  -webkit-animation: fade-in 2s; /* Safari 4+ */
+  -moz-animation:    fade-in 2s; /* Fx 5+ */
+  -o-animation:      fade-in 2s; /* Opera 12+ */
+  animation:         fade-in 2s; /* IE 10+, Fx 29+ */V
+}
 }
 @-webkit-keyframes fade-in {
   0%   { opacity: 0; }
